@@ -3,3 +3,4 @@ bin/
 *.save
 TicTacToe.csproj.user
 Properties/
+.vs/

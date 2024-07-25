@@ -1,0 +1,5 @@
+obj/
+bin/
+*.save
+TicTacToe.csproj.user
+Properties/

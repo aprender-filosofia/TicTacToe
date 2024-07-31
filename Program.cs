@@ -16,20 +16,30 @@ namespace TicTacToe
             Player playerX = new Player();
             Player playerY = new Player();
 
-            bool stop = false;
-
-            while (!stop)
+            while (true)
             {
                 RenderTable(table);
                 Console.Write("Add value for X: ");
                 int posX = Convert.ToInt16(Console.ReadLine());
                 table = playerX.Add(table, posX, 1);
-                stop = CheckWon(table, "X");
-                // 
+                if (CheckWon(table, "X"))
+                {
+                    Console.WriteLine("-----------------------------------------------------------");
+                    RenderTable(table);
+                    Console.WriteLine("-----------------------------------------------------------");
+                    break;
+                }
+
                 Console.Write("Add value for Y: ");
                 int posY = Convert.ToInt16(Console.ReadLine());
                 table = playerX.Add(table, posY, 2);
-                stop = CheckWon(table, "O");
+                if (CheckWon(table, "O"))
+                {
+                    Console.WriteLine("-----------------------------------------------------------");
+                    RenderTable(table);
+                    Console.WriteLine("-----------------------------------------------------------");
+                    break;
+                }
             }
         }
 
